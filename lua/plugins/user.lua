@@ -87,4 +87,6 @@ return {
       )
     end,
   },
+
+  { "justinmk/vim-sneak", lazy = false },
 }
