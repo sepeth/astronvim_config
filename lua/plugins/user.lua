@@ -1,5 +1,19 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
+-- Zoom in/out should work in Neovide
+if vim.g.neovide == true then
+  vim.api.nvim_set_keymap(
+    "n",
+    "<D-=>",
+    ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1, 2.5)<CR>",
+    { silent = true }
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "<D-->",
+    ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1, 0.5)<CR>",
+    { silent = true }
+  )
+  vim.api.nvim_set_keymap("n", "<D-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+end
 
 ---@type LazySpec
 return {
@@ -12,8 +26,6 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-
-  -- == Examples of Overriding Plugins ==
 
   -- customize alpha options
   {
