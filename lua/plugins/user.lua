@@ -101,4 +101,7 @@ return {
   },
 
   { "justinmk/vim-sneak", lazy = false },
+
+  -- See where I am at, or what I am looking at
+  { "wellle/context.vim" }
 }
