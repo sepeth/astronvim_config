@@ -44,15 +44,27 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
-        -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
+        -- Navigate buffer tabs with `H` and `L`
+        ["<C-h>"] = {
+          function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+          desc = "Previous buffer",
+        },
+        ["<C-l>"] = {
+          function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+          desc = "Next buffer",
+        },
+
+        -- Go to start/end of line
+        L = {
+          "$",
+          desc = "End of line",
+          noremap = true,
+        },
+        H = {
+          "^",
+          desc = "Beginning of line",
+          noremap = true,
+        },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
