@@ -44,12 +44,12 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
-        -- Navigate buffer tabs with `H` and `L`
-        ["<C-h>"] = {
+        -- Navigate buffer tabs with <Leader>bn and <Leader>bp
+        ["<Leader>bp"] = {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
-        ["<C-l>"] = {
+        ["<Leader>bn"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
         },
