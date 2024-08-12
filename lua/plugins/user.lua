@@ -109,4 +109,12 @@ return {
       vim.g.context_add_mappings = 0
     end
   },
+
+  { "czheo/mojo.vim" },
+
+  { "tpope/vim-unimpaired" },
+
+  { "tpope/vim-fugitive" },
+
+  { "Kapeli/dash.nvim", lazy = false },
 }
