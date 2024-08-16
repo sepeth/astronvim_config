@@ -15,6 +15,10 @@ if vim.g.neovide == true then
   vim.api.nvim_set_keymap("n", "<D-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
 
+-- Quickly create/open a new file in the same directory
+vim.api.nvim_set_keymap("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>s", ":e %%", { desc = "Create/Open a file in the same dir" })
+
 ---@type LazySpec
 return {
 
