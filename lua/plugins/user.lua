@@ -122,6 +122,8 @@ return {
 
   { "czheo/mojo.vim" },
 
+  { "tpope/vim-surround" },
+
   { "tpope/vim-unimpaired" },
 
   { "tpope/vim-fugitive" },
