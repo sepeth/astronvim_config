@@ -113,6 +113,8 @@ return {
 
   { "justinmk/vim-sneak", lazy = false },
 
+  { "Civitasv/cmake-tools.nvim", lazy = false },
+
   -- See where I am at, or what I am looking at
   {
     "wellle/context.vim",
