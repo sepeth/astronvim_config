@@ -1,31 +1,31 @@
 -- Zoom in/out should work in Neovide
 if vim.g.neovide == true then
-  vim.api.nvim_set_keymap(
+  vim.keymap.set(
     "n",
     "<D-=>",
     ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1, 2.5)<CR>",
     { silent = true }
   )
-  vim.api.nvim_set_keymap(
+  vim.keymap.set(
     "n",
     "<D-->",
     ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1, 0.5)<CR>",
     { silent = true }
   )
-  vim.api.nvim_set_keymap("n", "<D-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+  vim.keymap.set("n", "<D-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
 
 -- Buffer size keymaps
-vim.api.nvim_set_keymap("n", "<C-->", ":horizontal resize -4<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-+>", ":horizontal resize +4<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-<>", ":vertical resize -4<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<C->>", ":vertical resize +4<CR>", { silent = true })
+vim.keymap.set("n", "<C-->", ":horizontal resize -4<CR>", { silent = true })
+vim.keymap.set("n", "<C-+>", ":horizontal resize +4<CR>", { silent = true })
+vim.keymap.set("n", "<C-<>", ":vertical resize -4<CR>", { silent = true })
+vim.keymap.set("n", "<C->>", ":vertical resize +4<CR>", { silent = true })
 
 -- Quickly create/open a new file in the same directory
-vim.api.nvim_set_keymap("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>s", ":e %%", { desc = "Create/Open a file in the same dir" })
+vim.keymap.set("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>s", ":e %%", { desc = "Create/Open a file in the same dir" })
 
-vim.api.nvim_set_keymap("n", "<Leader>z", ":ZenMode<CR>", { desc = "Zen Mode" })
+vim.keymap.set("n", "<Leader>z", ":ZenMode<CR>", { desc = "Zen Mode" })
 
 ---@type LazySpec
 return {
