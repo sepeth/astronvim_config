@@ -22,7 +22,7 @@ vim.keymap.set("n", "<C-<>", ":vertical resize -4<CR>", { silent = true })
 vim.keymap.set("n", "<C->>", ":vertical resize +4<CR>", { silent = true })
 
 -- Quickly create/open a new file in the same directory
-vim.keymap.set("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>", { noremap = true })
+vim.keymap.set("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>")
 vim.keymap.set("n", "<Leader>s", ":e %%", { desc = "Create/Open a file in the same dir" })
 
 vim.keymap.set("n", "<Leader>z", ":ZenMode<CR>", { desc = "Zen Mode" })
