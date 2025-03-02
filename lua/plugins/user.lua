@@ -25,12 +25,22 @@ vim.api.nvim_set_keymap("n", "<C->>", ":vertical resize +4<CR>", { silent = true
 vim.api.nvim_set_keymap("c", "%%", "<C-R>=expand('%:p:h').'/'<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>s", ":e %%", { desc = "Create/Open a file in the same dir" })
 
+vim.api.nvim_set_keymap("n", "<Leader>z", ":ZenMode<CR>", { desc = "Zen Mode" })
+
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
-
   "andweeb/presence.nvim",
+
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      window = {
+        height = 0.95,
+      },
+    },
+  },
+
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
